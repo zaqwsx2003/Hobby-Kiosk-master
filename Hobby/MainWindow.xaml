@@ -1,0 +1,163 @@
+﻿<Window x:Class="Hobby.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hobby"
+        mc:Ignorable="d"
+        Title="Hobby" 
+        WindowStartupLocation="CenterScreen"
+        Height="1080" 
+        Width="1920" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Left="0"
+        Top="0"
+        MouseDown="Window_MouseDown"
+        KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF4F92D4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF2866A4"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid>
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </Grid>
+
+        <Grid Name="SidebarPanel" Margin="0,100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500" />
+                <!-- 시간, 날씨 등 정보 -->
+                <ColumnDefinition Width="*" />
+                <!-- 사용 안함 -->
+                <ColumnDefinition Width="500" />
+                <!-- 페이지 목록 -->
+            </Grid.ColumnDefinitions>
+
+            <!--#region 좌측 패널-->
+            <Grid Name="LeftPanel" MouseEnter="LeftPanel_MouseEnter" MouseLeave="LeftPanel_MouseLeave">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="65" />
+                </Grid.ColumnDefinitions>
+
+                <Border Background="#7F343434" CornerRadius="0,50,50,0">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="10" RenderingBias="Performance" BlurRadius="10" Direction="600" />
+                    </Border.Effect>
+
+                    <StackPanel Margin="30,50">
+                        <!--#region 시간-->
+                        <TextBlock Name="TimeText" Text="월요일, 오전 0시 00분" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" FontWeight="Bold">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="2" Direction="360" Color="White" Opacity="0.5" BlurRadius="4"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        <!--#endregion-->
+
+                        <!--#region 날씨-->
+                        <Border Margin="0,50,0,0" Background="#33FFFFFF" CornerRadius="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border Name="WeatherColor" Grid.Column="0" Background="Lime" CornerRadius="10,0,0,10" />
+                                <Grid Grid.Column="1" Margin="30,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="날씨" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                        <Image Name="WeatherImage" Source="Resources/Icon/Cloudy.png" Height="25" />
+                                        <TextBlock Name="WeatherText" Text="0 ℃" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect ShadowDepth="1" Direction="360" Color="Black" Opacity="0.5" BlurRadius="4"/>
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <!--#endregion-->
+                        
+                        <!--#region 미세먼지-->
+                        <Border Margin="0,25,0,0" Background="#33FFFFFF" CornerRadius="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border Name="FineDustColor" Grid.Column="0" Background="IndianRed" CornerRadius="10,0,0,10" />
+                                <Grid Grid.Column="1" Margin="30,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="미세먼지" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+                                    <TextBlock Name="FineDustText" Grid.Column="1" Text="0 ㎍/m³" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Right">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="1" Direction="360" Color="Black" Opacity="0.5" BlurRadius="4"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <!--#endregion-->
+                    </StackPanel>
+                </Border>
+
+                <Button Name="LeftSidebarButton" Tag="1" Cursor="Hand" Grid.Column="1" Click="LeftSidebarButton_Click" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent" Margin="5,0,0,0">
+                    <Image Name="LeftSidebarButton_Image" Opacity="0.9" Source="C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\Resources\Icon/Left_Button.png" />
+                </Button>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 우측 패널-->
+            <Grid Name="RightPanel" Grid.Column="2" MouseEnter="RightPanel_MouseEnter" MouseLeave="RightPanel_MouseLeave">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="65" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="RightSidebarButton" Tag="1" Cursor="Hand" Click="RightSidebarButton_Click" Height="60" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent" Margin="0,0,5,0">
+                    <Image x:Name="RightSidebarButton_Image" Opacity="0.9" Source="C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\Resources\Icon/Right_Button.png" />
+                </Button>
+
+                <Border Grid.Column="1" Background="#7F343434" CornerRadius="50,0,0,50">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="10" RenderingBias="Performance" BlurRadius="10" Direction="300" />
+                    </Border.Effect>
+
+                    <StackPanel Margin="30,50">
+                        <TextBlock />
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</Window>

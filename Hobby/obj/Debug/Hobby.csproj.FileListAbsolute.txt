@@ -1,0 +1,27 @@
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby.csprojAssemblyReference.cache
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Custom\CircleProgressBar.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Custom\CircleProgressBar.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\MainWindow.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Pages\MainPage.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Pages\SplashPage.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Popup\MessagePopup.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Popup\SelectDataPathPopup.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\App.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby Kiosk_MarkupCompile.cache
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby Kiosk_MarkupCompile.lref
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\App.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\MainWindow.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Pages\MainPage.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Pages\SplashPage.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Popup\MessagePopup.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Popup\SelectDataPathPopup.baml
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby Kiosk.g.resources
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby Kiosk.pdb
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\bin\Debug\Hobby Kiosk.exe.config
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\bin\Debug\Hobby Kiosk.exe
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\bin\Debug\Hobby Kiosk.pdb
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\HobbyKiosk.Properties.Resources.resources
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby.csproj.GenerateResource.cache
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby.csproj.CoreCompileInputs.cache
+C:\Users\ssapi\Desktop\Hobby-Kiosk-master\Hobby\obj\Debug\Hobby Kiosk.exe
